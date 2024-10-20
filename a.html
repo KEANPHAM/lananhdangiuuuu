@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>HELLO LAN ANH</title>
+    <style>
+        body {
+            background-color: #cceeff; /* Màu nền xanh nhạt hơn */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Ẩn phần tràn */
+            position: relative; /* Để các đám mây và hoa hiện đúng */
+        }
+        /* Nội dung hiển thị chính */
+        #content {
+            background-color: #e6f7ff; /* Màu nền xanh nhạt cho nội dung */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            color: #000; /* Chữ màu đen */
+            z-index: 1; /* Đảm bảo nội dung nằm trên các đám mây và hoa */
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        /* Đám mây */
+        .cloud {
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .cloud:before, .cloud:after {
+            content: '';
+            background: #fff;
+            position: absolute;
+            border-radius: 50%;
+        }
+        /* Kích thước và vị trí của các đám mây */
+        .cloud1 {
+            width: 120px;
+            height: 60px;
+            top: 50px;
+            left: 20px;
+        }
+        .cloud1:before {
+            width: 80px;
+            height: 80px;
+            top: -20px;
+            left: 10px;
+        }
+        .cloud1:after {
+            width: 100px;
+            height: 100px;
+            top: -30px;
+            left: 60px;
+        }
+        .cloud2 {
+            width: 140px;
+            height: 70px;
+            top: 100px;
+            right: 50px;
+        }
+        .cloud2:before {
+            width: 90px;
+            height: 90px;
+            top: -30px;
+            left: 20px;
+        }
+        .cloud2:after {
+            width: 110px;
+            height: 110px;
+            top: -40px;
+            left: 80px;
+        }
+        .cloud3 {
+            width: 150px;
+            height: 75px;
+            top: 150px;
+            left: 200px;
+        }
+        .cloud3:before {
+            width: 90px;
+            height: 90px;
+            top: -30px;
+            left: 20px;
+        }
+        .cloud3:after {
+            width: 110px;
+            height: 110px;
+            top: -40px;
+            left: 80px;
+        }
+        .cloud4 {
+            width: 130px;
+            height: 65px;
+            bottom: 200px;
+            right: 100px;
+        }
+        .cloud4:before {
+            width: 90px;
+            height: 90px;
+            top: -30px;
+            left: 10px;
+        }
+        .cloud4:after {
+            width: 110px;
+            height: 110px;
+            top: -40px;
+            left: 50px;
+        }
+        /* Hoa */
+        .flower {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+        /* Các cánh hoa */
+        .flower .petal {
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            position: absolute;
+            border-radius: 50%;
+        }
+        .flower .petal:nth-child(1) {
+            top: -20px;
+            left: 10px;
+        }
+        .flower .petal:nth-child(2) {
+            top: -10px;
+            left: 40px;
+        }
+        .flower .petal:nth-child(3) {
+            top: 20px;
+            left: 40px;
+        }
+        .flower .petal:nth-child(4) {
+            top: 30px;
+            left: 10px;
+        }
+        .flower .petal:nth-child(5) {
+            top: 20px;
+            left: -20px;
+        }
+        .flower .center {
+            width: 30px;
+            height: 30px;
+            background: yellow;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        /* Vị trí các bông hoa */
+        .flower1 {
+            bottom: 30px;
+            left: 50px;
+        }
+        .flower2 {
+            bottom: 20px;
+            right: 70px;
+        }
+        .flower3 {
+            bottom: 100px;
+            left: 200px;
+        }
+        .flower4 {
+            bottom: 150px;
+            right: 200px;
+        }
+        .flower5 {
+            bottom: 50px;
+            left: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Đám mây -->
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="cloud cloud4"></div>
+
+    <!-- Nội dung chính -->
+    <div id="content">
+        <p id="response"></p>
+        <script>
+            let a = prompt("Chào bạn! Hong biết bạn có phải Hoàng Thị Lan Anh không ạ? (Đúng/Sai)");
+            if (a === "Đúng" || a === "đúng" || a === "dung") {
+                let b;
+                do {
+                    b = prompt("Chào Lan Anh nha! Là anh đây! Anh có cái này cho em nè! Em có muốn xem hong? (Yes/No)");
+                    if (b === "Yes" || b === "yes") {
+                        document.getElementById("response").innerHTML = `
+                            <h1>HAPPY WOMEN'S DAY!!</h1>
+                            <p>Anh Kiên, ông trùm mafia internet, deptraisomot Việt Nam, chúc Lan Anh 20/10 sức khỏe, chúc gia đình Lan Anh bình an, chúc công việc Lan Anh càng ngày gặp nhiều may mắn. 8386 Hoàng Thị Lan Anh nhớ.</p>
+                            <p>Lan Anh mãi đỉnh, mãi đỉnh, mãi đỉnh!</p>`;
+                        break;
+                    } else if (b === "No" || b === "no") {
+                        document.getElementById("response").innerHTML = "<p>Ok, z thoiii. Nhưng mà muốn xem thì trả lời lại nha!</p>";
+                    } else {
+                        alert("Vui lòng trả lời 'Yes' hoặc 'No'!");
+                    }
+                } while (b !== "Yes" && b !== "yes");
+            } else {
+                alert("Anh biết đây là em mà. Hãy thử lại nhé!");
+                location.reload(); // Tải lại trang để người dùng nhập lại
+            }
+        </script>
+    </div>
+
+    <!-- Bông hoa -->
+    <div class="flower flower1">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="center"></div>
+    </div>
+    <div class="flower flower2">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="center"></div>
+    </div>
+    <div class="flower flower3">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="center"></div>
+    </div>
+    <div class="flower flower4">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="center"></div>
+    </div>
+    <div class="flower flower5">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="center"></div>
+    </div>
+</body>
+</html>
